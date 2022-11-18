@@ -1,0 +1,112 @@
+@import "../../assets/scss/helpers/variables";
+
+.custom-select {
+  cursor: pointer;
+  display: inline-block;
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: $black;
+  width: 100%;
+  position: relative;
+
+  &__selected {
+    transition: all 0.25s ease;
+    border: 1px solid $border;
+    width: 100%;
+    outline: none;
+    padding: $defaultPadding;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: #000;
+    background-color: #fff;
+    height: $inputHeight;
+
+    &--with-icon{
+      position: relative;
+      padding: $paddingWithIcon;
+
+      .icon {
+        position: absolute;
+        top: 15px;
+        left: 10px;
+        display: flex;
+        align-items: center;
+        width: $iconDimensions;
+        height: $iconDimensions;
+      }
+    }
+
+  }
+
+  &__options-wrap {
+    display: none;
+    position: absolute !important;
+    top: $inputHeight;
+    right: auto;
+    left: 0;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-height: $inputHeight * 5;
+    background: $white;
+    -webkit-box-shadow: 0 0 9px rgba(0, 0, 0, .25);
+    box-shadow: 0 0 9px rgba(0, 0, 0, .25);
+    color: $black;
+    width: 100%;
+
+    &.open {
+      display: block;
+    }
+
+  }
+
+  &__options{
+    width: 100%;
+    max-height: $inputHeight * 5;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    border: none;
+    color: $white;
+    cursor: pointer;
+  }
+
+  &__option {
+    margin: 0;
+    padding: $defaultPadding;
+    -webkit-transition: .15s ease-in;
+    -o-transition: .15s ease-in;
+    transition: .15s ease-in;
+    font-size: $font-size;
+    line-height: $line-height;
+    height: $inputHeight;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #000;
+    text-align: left;
+
+    &:hover,
+    &.active {
+      background: $border;
+      color: $white;
+    }
+
+    &-label {
+      display: block;
+      word-break: break-word;
+    }
+
+    input {
+      display: none;
+    }
+
+  }
+
+}

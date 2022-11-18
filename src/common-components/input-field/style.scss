@@ -1,0 +1,72 @@
+@import "../../assets/scss/helpers/variables";
+
+input[type="submit"] {
+  border: none;
+  cursor: pointer;
+}
+
+input:not([type=checkbox]):not([type=radio]),
+textarea {
+  outline: none;
+  resize: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+  transition: all 0.25s ease;
+  border: 1px solid $border;
+  width: 100%;
+  padding: $defaultPadding;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $black;
+  background-color: #fff;
+
+  &::placeholder {
+    color: $black;
+  }
+}
+
+.input {
+  &-wr.&-wr--with-icon {
+    position: relative;
+
+    .icon {
+      position: absolute;
+      top: 15px;
+      left: 10px;
+      display: flex;
+      align-items: center;
+      width: $iconDimensions;
+      height: $iconDimensions;
+    }
+
+    input:not([type=checkbox]):not([type=radio]) {
+      width: 100%;
+      padding: $paddingWithIcon !important;
+    }
+
+  }
+}
+
+.textarea {
+  &-wr.&-wr--with-icon {
+    position: relative;
+
+    .icon {
+      position: absolute;
+      top: 15px;
+      left: 10px;
+      display: flex;
+      align-items: center;
+      width: $iconDimensions;
+      height: $iconDimensions;
+    }
+
+    textarea {
+      width: 100%;
+      padding: $paddingWithIcon !important;
+    }
+
+  }
+}

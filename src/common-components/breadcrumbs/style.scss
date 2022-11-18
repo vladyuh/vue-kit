@@ -1,0 +1,34 @@
+.breadcrumb {
+  background-color: transparent;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  &__item {
+    &::after {
+      content: $breadCrumbDivider;
+      display: inline-block;
+      border-radius: 50%;
+      position: relative;
+      padding: 0 5px;
+    }
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  &__link {
+    &:hover {
+      text-decoration: underline;
+    }
+    &--active {
+      pointer-events: none;
+      font-weight: 600;
+    }
+  }
+}

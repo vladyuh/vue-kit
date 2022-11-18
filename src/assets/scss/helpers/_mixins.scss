@@ -1,0 +1,83 @@
+@mixin bg_img($repeat: no-repeat, $size: cover, $position: center center) {
+    background-repeat: $repeat;
+    background-size: $size;
+    background-position: $position;
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &::-moz-placeholder {
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media (min-width: $xs) {
+        @content;
+    }
+}
+
+@mixin xs-max {
+    @media (max-width: $xs - 1) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (min-width: $sm) {
+        @content;
+    }
+}
+
+@mixin sm-max {
+    @media (max-width: $sm - 1) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (min-width: $md) {
+        @content;
+    }
+}
+
+@mixin md-max {
+    @media (max-width: $md - 1) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (min-width: $md) {
+        @content;
+    }
+}
+
+@mixin lg-max {
+    @media (max-width: $lg - 1) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (min-width: $md) {
+        @content;
+    }
+}
+
+@mixin xl-max {
+    @media (max-width: $xl - 1) {
+        @content;
+    }
+}

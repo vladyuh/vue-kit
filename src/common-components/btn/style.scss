@@ -1,0 +1,82 @@
+@import "../../assets/scss/helpers/variables";
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 80px;
+  padding: 15px 25px;
+  background: $blue;
+  color: $white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  margin: 5px;
+
+  &:disabled{
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &--loading {
+    cursor: wait;
+
+    &::after {
+      content: '';
+      width: 12px;
+      min-width: 12px;
+      height: 12px;
+      border: 2px solid $white;
+      border-radius: 50%;
+      border-left-color: transparent !important;
+      margin-left: 10px;
+      transition: transform .5s linear;
+      animation: .5s linear infinite loadingrotate;
+      display: inline-block;
+
+    }
+  }
+
+  &--success::after {
+    content: '';
+    width: 15px;
+    height: 9px;
+    border: 2px solid $white;
+    -webkit-animation: none;
+    animation: none;
+    min-width: 12px;
+    display: inline-block;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg) translateX(4px);
+    margin-left: 10px;
+    position: relative;
+    left: 5px;
+  }
+
+}
+
+@-webkit-keyframes loadingrotate {
+  0% {
+    transform: rotate(0)
+  }
+
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes loadingrotate {
+  0% {
+    transform: rotate(0)
+  }
+
+  100% {
+    transform: rotate(360deg)
+  }
+}
