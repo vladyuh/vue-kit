@@ -14,22 +14,27 @@
   position: relative;
 
   &__selected {
+    position: relative;
     transition: all 0.25s ease;
-    border: 1px solid $border;
+    border: 1px solid $color-border;
     width: 100%;
     outline: none;
     padding: $defaultPadding;
     font-size: $font-size;
     line-height: $line-height;
-    color: #000;
-    background-color: #fff;
+    color: $black;
+    background-color: $white;
     height: $inputHeight;
+
+    .custom-select--opened & {
+      border-color: $color-accent;
+    }
 
     &--with-icon{
       position: relative;
       padding: $paddingWithIcon;
 
-      .icon {
+      .icon:not(.custom-select__arrow) {
         position: absolute;
         top: 15px;
         left: 10px;
@@ -89,12 +94,12 @@
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     overflow: hidden;
-    color: #000;
+    color: $black;
     text-align: left;
 
     &:hover,
     &.active {
-      background: $border;
+      background: $color-accent;
       color: $white;
     }
 
@@ -109,4 +114,15 @@
 
   }
 
+  &__arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 15px;
+
+    &-up {
+      transform: scaleY(-1);
+    }
+
+  }
 }

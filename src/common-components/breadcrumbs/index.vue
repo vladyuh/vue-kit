@@ -1,15 +1,15 @@
 <template>
   <div class="breadcrumbs">
-    <ul class="breadcrumbs-list">
+    <ul class="breadcrumbs__list">
       <li
           v-for="item in items"
           :key="(item)"
-          class="breadcrumb__item"
+          class="breadcrumbs__item"
       >
         <router-link
             :to="item.href"
             v-html="item.text"
-            :class="['breadcrumb__item', {'breadcrumb__item--active': item.active}]"
+            :class="['breadcrumbs__link', {'breadcrumbs__link--active': $route.path === item.href}]"
         />
       </li>
     </ul>
@@ -31,4 +31,4 @@ export default {
 }
 </script>
 
-<style src="style.scss" lang="scss"></style>
+<style src="./style.scss" lang="scss"/>

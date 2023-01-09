@@ -12,8 +12,8 @@
   width: 100%;
   height: 56px;
   transition: all 0.25s ease;
-  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.3);
   background: $white;
+  border-bottom: 2px solid $color-border;
 
   &__container {
     display: flex;

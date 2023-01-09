@@ -1,16 +1,10 @@
-.perf-no-animation * {
-    transition: none!important;
-    -webkit-animation: none!important;
-    animation: none!important;
-}
-
 html {
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 140%;
-    background: $white;
-    color: $black;
+    background: $color-primary;
+    color: $color-text-primary;
     letter-spacing: normal;
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
@@ -42,7 +36,7 @@ ul {
 }
 
 a {
-    color: $black;
+    color: $color-text-primary;
     text-decoration: none;
 }
 

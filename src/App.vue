@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 
-    <top-bar></top-bar>
+    <top-bar/>
 
     <transition
         name="slide-left"

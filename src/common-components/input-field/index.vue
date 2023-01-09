@@ -9,9 +9,10 @@
     >
     </label>
     <div
-        class="input-wr"
-        :class="['input-wr',
+        :class="[
         {
+          'input-wr': isInput,
+          'textarea-wr': !isInput,
           'input-wr--with-icon': isInput && iconName,
           'textarea-wr--with-icon': !isInput && iconName
         }]"

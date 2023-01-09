@@ -37,11 +37,11 @@
           v-html="selectedLabel || placeholder"
       />
 
-      <span
+      <icon
+          icon-name="ic_expand"
           :class="[
           'custom-select__arrow',
           `${showOptions ? 'custom-select__arrow-up' : 'custom-select__arrow-down'}`,
-          {'custom-select__arrow--label': label}
         ]"
       />
     </div>

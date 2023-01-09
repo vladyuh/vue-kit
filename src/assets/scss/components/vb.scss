@@ -1,7 +1,7 @@
 .vb-dragger {
   width: 6px;
   right: 2px;
-  background-color: transparentize($white, 0.8);
+  background-color: transparentize($color-primary, 0.8);
 
   .vb-visible & {
     min-height: 1px;
@@ -22,13 +22,13 @@
   .custom-select & {
     height: 100%;
     border-radius: 3px;
-    background-color: $blue;
+    background-color: $color-accent;
   }
 
   .mobile-menu & {
     height: 100%;
     border-radius: 3px;
-    background-color: $blue;
+    background-color: $color-accent;
   }
 
 }

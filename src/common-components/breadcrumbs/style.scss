@@ -1,4 +1,6 @@
-.breadcrumb {
+@import "../../assets/scss/helpers/variables";
+
+.breadcrumbs {
   background-color: transparent;
 
   &__list {
@@ -13,7 +15,6 @@
     &::after {
       content: $breadCrumbDivider;
       display: inline-block;
-      border-radius: 50%;
       position: relative;
       padding: 0 5px;
     }
