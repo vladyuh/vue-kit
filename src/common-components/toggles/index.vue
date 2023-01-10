@@ -50,6 +50,7 @@ export default {
   },
   mounted () {
     this.scrollToActiveTab(this.activeTabSelector, this.$refs.togglesInner, this.toggles, this.activeIndex)
+    this.$emit('active-index-change', this.activeToggle)
   },
   methods: {
     clickToggle (event, toggle, index) {

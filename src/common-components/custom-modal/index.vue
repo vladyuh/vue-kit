@@ -1,6 +1,5 @@
 <template>
   <div
-      v-if="isOpen"
       :class="[
           'custom-modal',
           customClass ? customClass : ''
@@ -12,7 +11,7 @@
       <div
           v-if="isCloseBtn"
           class="custom-modal__close"
-          @click="isOpen = !isOpen"
+          @click="$bus.emit('close-modal')"
       >
         <icon
           icon-name="ic_close"
@@ -30,7 +29,6 @@
 </template>
 
 <script>
-
 import icon from "@/common-components/icon";
 
 export default {
@@ -42,21 +40,7 @@ export default {
     isCloseBtn: Boolean,
     customClass: String
   },
-  data () {
-    return {
-      isOpen: Boolean
-    }
-  },
-  computed: {},
-  mounted () {
-    this.$bus.on('close-modal', () => {
-      this.isOpen = !this.isOpen
-    })
-    this.$refs.customModal.isOpen = true
-  },
-  methods: {
-  }
 }
 </script>
 
-<style src="./style.scss" lang="scss"></style>
+<style src="./style.scss" lang="scss"/>

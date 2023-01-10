@@ -101,28 +101,29 @@
       </div>
       <h2>Вкладки</h2>
       <toggles
-          :toggles="toggles"
+          :toggles="toggles.items"
           @active-index-change="getActiveTab($event)"
       />
-      <div v-if="activeToggle==='toggle-1'">
+      <div v-if="toggles.activeToggle==='toggle-1'">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       </div>
-      <div v-if="activeToggle==='toggle-2'">
+      <div v-if="toggles.activeToggle==='toggle-2'">
         Lorem Ipsum has been the industry's
         standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
         make a type specimen book.
       </div>
-      <div v-if="activeToggle==='toggle-3'">
+      <div v-if="toggles.activeToggle==='toggle-3'">
         It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
         unchanged.
       </div>
-      <div v-if="activeToggle==='toggle-4'">
+      <div v-if="toggles.activeToggle==='toggle-4'">
         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
         and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
       </div>
       <h2>Модальное окно</h2>
       <btn
           no-rounded
+          @click="openCheckboxModal"
       >
         <span>Показать модальное окно</span>
       </btn>
@@ -138,6 +139,8 @@ import CustomSelect from "@/common-components/custom-select";
 import InputField from "@/common-components/input-field";
 import radio from "@/common-components/radio";
 import Toggles from "@/common-components/toggles";
+import checkboxModal from "@/components/checkbox-modal";
+
 export default {
   name: 'HomeView',
   components: {
@@ -158,20 +161,30 @@ export default {
         { name: "Option 1", value: "Option 1", label: "Option 1" },
         { name: "Option 2", value: "Option 2", label: "Option 2"}
       ],
-      toggles: [
-        { name: "Toggle 1", code: "toggle-1" },
-        { name: "Toggle 2", code: "toggle-2" },
-        { name: "Toggle 3", code: "toggle-3" },
-        { name: "Toggle 4", code: "toggle-4" },
-      ],
-      activeToggle: 'toggle-1'
+      toggles: {
+        activeToggle: null,
+        items: [
+          { name: "Toggle 1", code: "toggle-1" },
+          { name: "Toggle 2", code: "toggle-2" },
+          { name: "Toggle 3", code: "toggle-3" },
+          { name: "Toggle 4", code: "toggle-4" },
+        ],
+      },
     }
   },
-  computed: {
+  mounted() {
+    this.toggles.activeToggle = this.toggles?.items[0]?.code
   },
   methods: {
     getActiveTab (event) {
-      this.activeToggle = event
+      this.toggles.activeToggle = event
+    },
+    openCheckboxModal () {
+      this.$bus.emit('open-modal', {
+        name: 'checkbox-modal',
+        component: checkboxModal,
+        isCloseBtn: true
+      })
     }
   }
 }
