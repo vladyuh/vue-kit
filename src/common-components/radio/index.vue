@@ -6,6 +6,7 @@
         :id="id"
         :value="value"
         :checked="value"
+        :disabled="disabled"
         @change="updateValue"
     >
     <span class="radio__elem"></span>
@@ -44,4 +45,4 @@ export default {
 }
 </script>
 
-<style src="./style.scss" lang="scss"></style>
+<style src="./style.scss" lang="scss"/>

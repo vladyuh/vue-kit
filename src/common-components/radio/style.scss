@@ -4,7 +4,7 @@
     display: flex;
     position: relative;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 140%;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -15,9 +15,6 @@
 
     &__desc {
         display: block;
-    }
-
-    &__desc {
         font-size: 12px;
         color: $color-border;
     }
@@ -41,11 +38,11 @@
         height: 20px;
         width: 20px;
         min-width: 20px;
-        border: 1px solid $color-border;
+        background-color: $color-item-bg;
+        border: 2px solid $color-border;
         display: inline-block;
         margin-right: 10px;
         border-radius: 50%;
-        background: $white;
 
         &:after {
             content: "";
@@ -65,16 +62,11 @@
     & input {
 
         &:disabled {
-            &~.radio__text {
-                color: $color-border;
+            &:checked~.radio__elem,
+            &~.radio__text,
+            &~.radio__elem{
+                opacity: 0.7;
             }
-            &~.radio__elem {
-                background-color: $color-border;
-            }
-        }
-
-        &:checked~.radio__elem {
-            background-color: $white;
         }
 
         &:checked~.radio__elem:after {
@@ -83,5 +75,4 @@
             border: none;
         }
     }
-
 }

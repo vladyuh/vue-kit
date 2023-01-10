@@ -9,6 +9,15 @@
     list-style-type: none;
     overflow-x: auto;
     white-space: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+      -webkit-appearance: none;
+      width: 0;
+      height: 0;
+    }
   }
 
   &__item {

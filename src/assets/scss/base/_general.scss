@@ -6,7 +6,7 @@ html {
     background: $color-primary;
     color: $color-text-primary;
     letter-spacing: normal;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Mulish', sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -61,8 +61,8 @@ body {
     flex-direction: column;
 }
 
-.page-wrapper{
-
+main {
+    padding-top: 56px;
 }
 
 footer{

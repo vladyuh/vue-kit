@@ -7,7 +7,9 @@
        'btn--small': small,
        'btn--gradient': gradient,
        'btn--dashed': dashed,
+       'btn--bordered': bordered,
        'btn--spinner-icon': spinner,
+       'btn--no-rounded': noRounded,
     }"
       :style="{
       color: fontColor,

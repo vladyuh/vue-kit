@@ -2,8 +2,8 @@
   <div class="breadcrumbs">
     <ul class="breadcrumbs__list">
       <li
-          v-for="item in items"
-          :key="(item)"
+          v-for="(item, key) in items"
+          :key="key"
           class="breadcrumbs__item"
       >
         <router-link
