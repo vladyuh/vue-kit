@@ -11,7 +11,8 @@
     min-height: inherit;
   }
 
-  .mobile-menu & {
+  .mobile-menu &,
+  .custom-modal & {
     padding: 16px 0;
     margin: 0 2px 0 0;
   }
@@ -25,10 +26,10 @@
     background-color: $color-accent;
   }
 
-  .mobile-menu & {
+  .mobile-menu &,
+  .custom-modal & {
     height: 100%;
     border-radius: 3px;
     background-color: $color-accent;
   }
-
 }

@@ -6,23 +6,25 @@
       ]"
       ref="customModal"
   >
-    <div class="custom-modal__overlay"></div>
-    <div class="custom-modal__inner">
-      <div
-          v-if="isCloseBtn"
-          class="custom-modal__close"
-          @click="$bus.emit('close-modal')"
-      >
-        <icon
-          icon-name="ic_close"
-          width="24"
-          height="24"
-        />
-      </div>
-      <div class="custom-modal__content">
-        <slot name="modalHeader"></slot>
-        <slot name="modalBody"></slot>
-        <slot name="modalFooter"></slot>
+    <div class="custom-modal__overlay" @click="closeOutside($event)"></div>
+    <div class="custom-modal__inner" v-bar>
+      <div class="custom-modal__inner-wr">
+        <div
+            v-if="isCloseBtn"
+            class="custom-modal__close"
+            @click="$bus.emit('close-modal')"
+        >
+          <icon
+              icon-name="ic_close"
+              width="24"
+              height="24"
+          />
+        </div>
+        <div class="custom-modal__content">
+          <slot name="modalHeader"></slot>
+          <slot name="modalBody"></slot>
+          <slot name="modalFooter"></slot>
+        </div>
       </div>
     </div>
   </div>
@@ -40,6 +42,13 @@ export default {
     isCloseBtn: Boolean,
     customClass: String
   },
+  methods: {
+    closeOutside (event) {
+      if (event.target === event.currentTarget) {
+        this.$bus.emit('close-modal')
+      }
+    }
+  }
 }
 </script>
 

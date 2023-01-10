@@ -28,20 +28,33 @@
     max-width: 600px;
     width: 100%;
     background: $white;
-    padding: 15px;
 
     @include sm {
       margin: auto;
       max-height: 100%;
       height: auto;
       max-width: 480px;
+      border-radius: 16px;
     }
-
   }
 
   &__close {
     position: absolute;
     top: 15px;
     right: 15px;
+    cursor: pointer;
+
+    @include sm {
+      top: 40px;
+      right: 40px;
+    }
+  }
+
+  &__content {
+    padding: 15px;
+
+    @include sm {
+      padding: 40px;
+    }
   }
 }

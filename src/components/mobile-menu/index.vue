@@ -52,7 +52,6 @@
         <div class="mobile-menu__bottom"></div>
       </div>
     </div>
-
   </div>
 
 </template>
@@ -87,4 +86,4 @@ export default {
 
 </script>
 
-<style src="./style.scss" lang="scss"></style>
+<style src="./style.scss" lang="scss"/>

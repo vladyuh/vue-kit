@@ -9,8 +9,7 @@
   width: 300px;
   background: $color-item-bg;
   transition: transform 0.3s ease;
-  border-radius: 0 16px 16px 0;
-  z-index: 1001;
+  z-index: 100;
 
   &__overlay{
     position: fixed;
@@ -50,6 +49,10 @@
       margin: 0 -8px;
       min-height: 48px;
 
+      &.router-link-exact-active {
+        font-weight: 600;
+      }
+
       &--with-icon{
         position: relative;
         padding-left: 40px;
@@ -61,17 +64,11 @@
         left: 8px;
         transform: translateY(-50%);
       }
-
-      &-text{
-
-      }
-
     }
   }
 
   @include lg{
     display: none;
   }
-
 }
 

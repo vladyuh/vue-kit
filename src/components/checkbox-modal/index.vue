@@ -1,6 +1,6 @@
 <template>
   <div class="checkbox-modal">
-    <h2>Выберите вариант</h2>
+    <h3>Выберите вариант</h3>
     <checkbox
         label="1 вариант"
     />

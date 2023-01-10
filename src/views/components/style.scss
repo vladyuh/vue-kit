@@ -1,0 +1,25 @@
+.container{
+  &.components-container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+.components-container {
+
+  h2 {
+    margin-top: 24px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    .btn {
+      flex-grow: 1;
+      flex-basis: 200px;
+    }
+
+  }
+}

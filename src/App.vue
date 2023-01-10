@@ -61,12 +61,8 @@ export default {
       mobileMenuLinks: [
         {
           iconName: "ic_apps",
-          label: "Пункт 1",
-          href: "/"
-        },
-        {
-          label: "Пункт 2",
-          href: "/"
+          label: "Компоненты",
+          href: "/components"
         },
       ],
       modalProps: {
@@ -79,9 +75,9 @@ export default {
     isPositionFixed: function () {
       this.isPositionFixed ? this.$bus.emit('set-position-fixed') : this.$bus.emit('remove-position-fixed')
     },
-    modalProps (newValue) {
-      if (newValue === {}) {
-        this.$bus.emit('close-modal')
+    '$route' (newValue, oldValue) {
+      if (newValue !== oldValue) {
+        this.$bus.emit('close-mobile-menu')
       }
     }
   },
